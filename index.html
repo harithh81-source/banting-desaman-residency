@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taman Desa Idaman @ Olak Lempit, Banting | 28 Unit Semi-D Setingkat Pegangan Bebas</title>
+    <meta name="description" content="Taman Desa Idaman — 28 Unit Rumah Berkembar Setingkat di Olak Lempit, Banting. Tanah Rizab Melayu Pegangan Bebas, Tempahan RM200, Wang Tunai Balik sehingga RM25,000, Pinjaman LPPSA 100%.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#C9A96E',
+                            'gold-light': '#E2CB9A',
+                            'gold-dark': '#A68B52',
+                            charcoal: '#1A1A1A',
+                            'dark': '#0D0D0D',
+                            'surface': '#141414',
+                            'surface-light': '#1E1E1E',
+                            'border': '#2A2A2A',
+                        }
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-left': 'slideLeft 0.6s ease-out forwards',
+                        'slide-right': 'slideRight 0.6s ease-out forwards',
+                        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+                        'count-up': 'countUp 0.5s ease-out forwards',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideRight: {
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        pulseGold: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(201, 169, 110, 0.4)' },
+                            '50%': { boxShadow: '0 0 0 12px rgba(201, 169, 110, 0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0D0D0D; }
+        ::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E2CB9A; }
+
+        /* Animations on scroll - hidden by default */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        /* Gallery hover effect */
+        .gallery-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-card:hover::before { opacity: 1; }
+        .gallery-card:hover img { transform: scale(1.08); }
+        .gallery-card:hover .gallery-label { opacity: 1; transform: translateY(0); }
+
+        /* Gold shimmer line */
+        .shimmer-line {
+            background: linear-gradient(90deg, transparent, #C9A96E, transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2.5s linear infinite;
+        }
+
+        /* Feature card glow */
+        .feature-card { transition: all 0.4s ease; }
+        .feature-card:hover {
+            border-color: #C9A96E;
+            box-shadow: 0 0 30px rgba(201, 169, 110, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Hero parallax */
+        .hero-bg { transition: transform 0.3s ease-out; }
+
+        /* Nav glass */
+        .nav-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Form input focus */
+        .form-input:focus { box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3); }
+
+        /* Lightbox */
+        .lightbox { transition: opacity 0.3s ease; }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+
+        /* Value prop badge */
+        .value-badge {
+            background: linear-gradient(135deg, rgba(201,169,110,0.15), rgba(201,169,110,0.05));
+            border: 1px solid rgba(201,169,110,0.3);
+        }
+
+        /* CTA shimmer button */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-shimmer:hover::after { left: 100%; }
+    </style>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased">
+
+    <!-- ========== STICKY NAVIGATION ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass bg-brand-dark/80 border-b border-brand-border/50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-gold to-brand-gold-dark flex items-center justify-center">
+                        <svg class="w-5 h-5 text-brand-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold text-brand-gold tracking-wider uppercase block leading-tight">Desa Idaman</span>
+                        <span class="text-[10px] text-gray-500 tracking-widest uppercase">Olak Lempit, Banting</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Ciri-Ciri</a>
+                    <a href="#gallery" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Galeri</a>
+                    <a href="#value" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Tawaran</a>
+                    <a href="#register" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Daftar</a>
+                </div>
+
+                <!-- Phone + CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:+60123456789" class="hidden sm:flex items-center gap-2 text-sm text-gray-300 hover:text-brand-gold transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span class="font-medium">+6012-345 6789</span>
+                    </a>
+                    <a href="#register" class="bg-brand-gold hover:bg-brand-gold-light text-brand-dark text-sm font-bold px-5 py-2.5 rounded-lg transition-all duration-300 btn-shimmer">
+                        Tempah Sekarang
+                    </a>
+
+                    <!-- Mobile Hamburger -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-brand-gold transition-colors p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden border-t border-brand-border/50 py-4 space-y-3">
+                <a href="#features" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Ciri-Ciri</a>
+                <a href="#gallery" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Galeri</a>
+                <a href="#value" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Tawaran</a>
+                <a href="#register" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Daftar</a>
+                <a href="tel:+60123456789" class="flex items-center gap-2 text-sm text-brand-gold py-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="font-medium">+6012-345 6789</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 hero-bg">
+            <img src="images/hero-rendering.png" alt="Perspektif Taman Desa Idaman" class="w-full h-full object-cover object-center" id="hero-img">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/70 via-brand-dark/50 to-brand-dark"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-brand-dark/40"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    <span class="text-xs font-semibold text-brand-gold tracking-widest uppercase">Kini Dibuka Untuk Tempahan</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold leading-[1.1] mb-6 animate-fade-up">
+                    <span class="text-white">Taman</span><br>
+                    <span class="text-brand-gold">Desa Idaman</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 font-light mb-2 animate-fade-up" style="animation-delay: 0.2s">
+                    Olak Lempit, Banting — Selangor
+                </p>
+                <p class="text-base text-gray-500 mb-10 animate-fade-up" style="animation-delay: 0.3s">
+                    28 Unit Rumah Berkembar Setingkat &bull; Tanah Rizab Melayu Pegangan Bebas
+                </p>
+
+                <!-- Quick Stats Row -->
+                <div class="flex flex-wrap gap-4 mb-10 animate-fade-up" style="animation-delay: 0.4s">
+                    <div class="value-badge rounded-xl px-5 py-3 text-center">
+                        <span class="block text-2xl font-bold text-brand-gold">RM200</span>
+                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Yuran Tempahan</span>
+                    </div>
+                    <div class="value-badge rounded-xl px-5 py-3 text-center">
+                        <span class="block text-2xl font-bold text-brand-gold">RM25K</span>
+                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Wang Tunai Balik</span>
+                    </div>
+                    <div class="value-badge rounded-xl px-5 py-3 text-center">
+                        <span class="block text-2xl font-bold text-brand-gold">100%</span>
+                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Pinjaman LPPSA</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 animate-fade-up" style="animation-delay: 0.5s">
+                    <a href="#register" class="bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 btn-shimmer animate-pulse-gold inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        Daftar Minat
+                    </a>
+                    <a href="#features" class="border border-white/20 hover:border-brand-gold/50 text-white hover:text-brand-gold font-medium text-base px-8 py-4 rounded-xl transition-all duration-300 inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        Lihat Lanjut
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-[10px] text-gray-500 uppercase tracking-[3px]">Tatal</span>
+            <div class="w-px h-8 bg-gradient-to-b from-brand-gold to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== FEATURES MATRIX ========== -->
+    <section id="features" class="py-24 lg:py-32 bg-brand-dark relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">Spesifikasi Hartanah</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Dibina Untuk <span class="text-brand-gold italic">Keluarga Anda</span>
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">
+                    Rumah berkembar setingkat yang direka untuk keselesaan, keluasan dan nilai berkekalan.
+                </p>
+                <div class="w-16 h-px bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <!-- Lot Dimensions -->
+            <div class="text-center mb-12 reveal">
+                <div class="inline-flex items-center gap-3 bg-brand-surface border border-brand-border rounded-2xl px-8 py-4">
+                    <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg>
+                    <div class="text-left">
+                        <span class="text-xs text-gray-500 uppercase tracking-wider block">Saiz Lot</span>
+                        <span class="text-white font-semibold">33.7' – 34.44' × 74'</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <!-- Bedrooms -->
+                <div class="feature-card bg-brand-surface border border-brand-border rounded-2xl p-6 lg:p-8 text-center group reveal" style="transition-delay: 0.1s">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <span class="text-4xl lg:text-5xl font-bold text-brand-gold block mb-2 counter" data-target="4">0</span>
+                    <span class="text-sm text-gray-400 uppercase tracking-wider">Bilik Tidur</span>
+                </div>
+
+                <!-- Bathrooms -->
+                <div class="feature-card bg-brand-surface border border-brand-border rounded-2xl p-6 lg:p-8 text-center group reveal" style="transition-delay: 0.2s">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="text-4xl lg:text-5xl font-bold text-brand-gold block mb-2 counter" data-target="2">0</span>
+                    <span class="text-sm text-gray-400 uppercase tracking-wider">Bilik Air</span>
+                </div>
+
+                <!-- Built-Up -->
+                <div class="feature-card bg-brand-surface border border-brand-border rounded-2xl p-6 lg:p-8 text-center group reveal" style="transition-delay: 0.3s">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                    </div>
+                    <span class="text-4xl lg:text-5xl font-bold text-brand-gold block mb-2 counter" data-target="966">0</span>
+                    <span class="text-sm text-gray-400 uppercase tracking-wider">Kps Binaan</span>
+                </div>
+
+                <!-- Units -->
+                <div class="feature-card bg-brand-surface border border-brand-border rounded-2xl p-6 lg:p-8 text-center group reveal" style="transition-delay: 0.4s">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <span class="text-4xl lg:text-5xl font-bold text-brand-gold block mb-2 counter" data-target="28">0</span>
+                    <span class="text-sm text-gray-400 uppercase tracking-wider">Unit Eksklusif</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== VALUE PROPOSITIONS ========== -->
+    <section id="value" class="py-24 lg:py-32 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">Tawaran Eksklusif</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Kenapa <span class="text-brand-gold italic">Desa Idaman</span>?
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">
+                    Nilai tiada tandingan untuk pembeli pertama dan penjawat awam.
+                </p>
+                <div class="w-16 h-px bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <!-- Value Props Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Booking RM200 -->
+                <div class="bg-brand-dark border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/40 transition-all duration-500 reveal" style="transition-delay: 0.1s">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-[60px]"></div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-gold mb-2">RM200</h3>
+                    <p class="text-white font-semibold mb-2">Yuran Tempahan Sahaja</p>
+                    <p class="text-sm text-gray-500">Miliki rumah idaman anda dengan hanya RM200. Tanpa kos pendahuluan, tanpa tekanan.</p>
+                </div>
+
+                <!-- Freehold -->
+                <div class="bg-brand-dark border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/40 transition-all duration-500 reveal" style="transition-delay: 0.2s">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-[60px]"></div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-gold mb-2">Pegangan Bebas</h3>
+                    <p class="text-white font-semibold mb-2">Tanah Rizab Melayu</p>
+                    <p class="text-sm text-gray-500">Miliki tanah anda selama-lamanya. Geran pegangan bebas di atas Tanah Rizab Melayu untuk warisan generasi.</p>
+                </div>
+
+                <!-- Cash Back -->
+                <div class="bg-brand-dark border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/40 transition-all duration-500 reveal" style="transition-delay: 0.3s">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-[60px]"></div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-gold mb-2">RM25,000</h3>
+                    <p class="text-white font-semibold mb-2">Ganjaran Wang Tunai</p>
+                    <p class="text-sm text-gray-500">Terima wang tunai balik sehingga RM25,000 selepas selesai. Penjimatan tambahan untuk anda.</p>
+                </div>
+
+                <!-- LPPSA -->
+                <div class="bg-brand-dark border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/40 transition-all duration-500 reveal" style="transition-delay: 0.4s">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-[60px]"></div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-gold mb-2">100%</h3>
+                    <p class="text-white font-semibold mb-2">Pinjaman LPPSA A–Z</p>
+                    <p class="text-sm text-gray-500">Pembiayaan LPPSA penuh diuruskan dari A hingga Z. Sifar deposit, sifar risau untuk penjawat awam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section id="gallery" class="py-24 lg:py-32 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">Galeri Unit Contoh</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Bayangkan <span class="text-brand-gold italic">Rumah Anda</span>
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">
+                    Langkah masuk ke unit contoh kami yang dihias cantik dan rasai mutu kerja berkualiti tinggi.
+                </p>
+                <div class="w-16 h-px bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <!-- Gallery Grid — Masonry-like -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Living Area - Large -->
+                <div class="gallery-card relative rounded-2xl overflow-hidden cursor-pointer lg:col-span-2 lg:row-span-2 aspect-[16/10] reveal" onclick="openLightbox(this)">
+                    <img src="images/gallery-living.png" alt="Ruang Tamu" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="gallery-label absolute bottom-0 left-0 right-0 z-10 p-6 opacity-0 transform translate-y-4 transition-all duration-400">
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Unit Contoh</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">Ruang Tamu</h3>
+                    </div>
+                </div>
+
+                <!-- Dining -->
+                <div class="gallery-card relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3] reveal" style="transition-delay: 0.1s" onclick="openLightbox(this)">
+                    <img src="images/gallery-dining.png" alt="Ruang Makan" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="gallery-label absolute bottom-0 left-0 right-0 z-10 p-5 opacity-0 transform translate-y-4 transition-all duration-400">
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Unit Contoh</span>
+                        <h3 class="text-lg font-serif font-bold text-white mt-1">Ruang Makan</h3>
+                    </div>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="gallery-card relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3] reveal" style="transition-delay: 0.2s" onclick="openLightbox(this)">
+                    <img src="images/gallery-kitchen.png" alt="Dapur" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="gallery-label absolute bottom-0 left-0 right-0 z-10 p-5 opacity-0 transform translate-y-4 transition-all duration-400">
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Unit Contoh</span>
+                        <h3 class="text-lg font-serif font-bold text-white mt-1">Dapur</h3>
+                    </div>
+                </div>
+
+                <!-- Bedroom -->
+                <div class="gallery-card relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3] reveal" style="transition-delay: 0.1s" onclick="openLightbox(this)">
+                    <img src="images/gallery-bedroom.png" alt="Bilik Tidur Utama" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="gallery-label absolute bottom-0 left-0 right-0 z-10 p-5 opacity-0 transform translate-y-4 transition-all duration-400">
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Unit Contoh</span>
+                        <h3 class="text-lg font-serif font-bold text-white mt-1">Bilik Tidur Utama</h3>
+                    </div>
+                </div>
+
+                <!-- Aerial -->
+                <div class="gallery-card relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3] lg:col-span-2 reveal" style="transition-delay: 0.2s" onclick="openLightbox(this)">
+                    <img src="images/gallery-aerial.png" alt="Pandangan Udara" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="gallery-label absolute bottom-0 left-0 right-0 z-10 p-5 opacity-0 transform translate-y-4 transition-all duration-400">
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Pembangunan</span>
+                        <h3 class="text-lg font-serif font-bold text-white mt-1">Pandangan Udara</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/95 flex items-center justify-center opacity-0 pointer-events-none lightbox" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox(event)" class="absolute top-6 right-6 text-white hover:text-brand-gold transition-colors z-10">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl">
+    </div>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== REGISTRATION FORM ========== -->
+    <section id="register" class="py-24 lg:py-32 bg-brand-surface relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-gold/3 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="reveal-left">
+                    <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">Unit Terhad</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-6">
+                        Miliki <span class="text-brand-gold italic">Rumah Idaman</span> Anda Hari Ini
+                    </h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Dengan hanya 28 unit eksklusif, ini peluang jarang untuk memiliki rumah berkembar setingkat pegangan bebas di Banting. Daftarkan minat anda sekarang dan pasukan kami akan menghubungi anda dengan maklumat lengkap projek.
+                    </p>
+
+                    <!-- Trust Indicators -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <span class="text-gray-300 text-sm">Tiada komitmen diperlukan — daftar untuk terima pakej maklumat</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <span class="text-gray-300 text-sm">Konsultasi percuma kelayakan pinjaman LPPSA / bank</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <span class="text-gray-300 text-sm">Keutamaan memilih lot pilihan anda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="reveal-right">
+                    <div class="bg-brand-dark border border-brand-border rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+                        <!-- Form header accent -->
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold"></div>
+
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Daftarkan Minat Anda</h3>
+                        <p class="text-sm text-gray-500 mb-8">Isikan maklumat anda dan kami akan menghubungi dalam masa 24 jam.</p>
+
+                        <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <!-- Name -->
+                            <div>
+                                <label for="form-name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Nama Penuh</label>
+                                <input type="text" id="form-name" name="name" required placeholder="e.g. Ahmad bin Abdullah"
+                                    class="form-input w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:border-brand-gold focus:outline-none transition-all duration-300 text-sm">
+                            </div>
+
+                            <!-- Phone -->
+                            <div>
+                                <label for="form-phone" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Nombor Telefon</label>
+                                <div class="flex">
+                                    <span class="bg-brand-surface border border-brand-border border-r-0 rounded-l-xl px-4 py-3.5 text-gray-500 text-sm flex items-center">+60</span>
+                                    <input type="tel" id="form-phone" name="phone" required placeholder="12-345 6789" pattern="[0-9\-\s]{8,15}"
+                                        class="form-input w-full bg-brand-surface border border-brand-border rounded-r-xl px-4 py-3.5 text-white placeholder-gray-600 focus:border-brand-gold focus:outline-none transition-all duration-300 text-sm">
+                                </div>
+                            </div>
+
+                            <!-- Employment Sector -->
+                            <div>
+                                <label for="form-sector" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Sektor Pekerjaan</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="sector" value="kerajaan" class="hidden peer" required>
+                                        <div class="peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 peer-checked:text-brand-gold border border-brand-border rounded-xl py-3.5 px-4 text-center text-sm text-gray-400 hover:border-gray-500 transition-all duration-300">
+                                            <svg class="w-5 h-5 mx-auto mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                            Kerajaan
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="sector" value="swasta" class="hidden peer">
+                                        <div class="peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 peer-checked:text-brand-gold border border-brand-border rounded-xl py-3.5 px-4 text-center text-sm text-gray-400 hover:border-gray-500 transition-all duration-300">
+                                            <svg class="w-5 h-5 mx-auto mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                            Swasta
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold text-base py-4 rounded-xl transition-all duration-300 btn-shimmer flex items-center justify-center gap-2 mt-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                                <span>Hantar & Dapatkan Maklumat</span>
+                            </button>
+
+                            <p class="text-[11px] text-gray-600 text-center mt-3">
+                                Dengan menghantar, anda bersetuju untuk dihubungi oleh pasukan jualan kami berkaitan projek ini.
+                            </p>
+                        </form>
+
+                        <!-- Success State -->
+                        <div id="form-success" class="hidden text-center py-8">
+                            <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-white mb-2">Terima Kasih!</h3>
+                            <p class="text-gray-400 text-sm">Pendaftaran anda telah diterima. Pasukan kami akan menghubungi anda dalam masa 24 jam dengan maklumat lengkap.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-brand-dark border-t border-brand-border/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-gold to-brand-gold-dark flex items-center justify-center">
+                        <svg class="w-4 h-4 text-brand-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold text-white">Taman Desa Idaman</span>
+                        <span class="text-[10px] text-gray-600 block">Olak Lempit, Banting</span>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <a href="#hero" class="hover:text-brand-gold transition-colors">Utama</a>
+                    <a href="#features" class="hover:text-brand-gold transition-colors">Ciri-Ciri</a>
+                    <a href="#gallery" class="hover:text-brand-gold transition-colors">Galeri</a>
+                    <a href="#register" class="hover:text-brand-gold transition-colors">Daftar</a>
+                </div>
+
+                <!-- Phone -->
+                <a href="tel:+60123456789" class="flex items-center gap-2 text-sm text-gray-400 hover:text-brand-gold transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    +6012-345 6789
+                </a>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-brand-border/30 text-center">
+                <p class="text-xs text-gray-600">
+                    © 2026 Taman Desa Idaman. Hak cipta terpelihara. Laman web ini adalah untuk tujuan pemasaran sahaja. Semua maklumat tertakluk kepada pengesahan pemaju.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WhatsApp BUTTON ========== -->
+    <a href="https://wa.me/60123456789?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman%20%40%20Olak%20Lempit%2C%20Banting." target="_blank" rel="noopener"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110 group"
+        aria-label="WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-brand-dark animate-pulse"></span>
+    </a>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ===== Mobile Menu Toggle =====
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ===== Navbar Scroll Effect =====
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navbar.classList.add('bg-brand-dark/95', 'shadow-lg', 'shadow-black/20');
+                navbar.classList.remove('bg-brand-dark/80');
+            } else {
+                navbar.classList.remove('bg-brand-dark/95', 'shadow-lg', 'shadow-black/20');
+                navbar.classList.add('bg-brand-dark/80');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ===== Scroll Reveal Animation =====
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== Counter Animation =====
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 1500;
+                    const startTime = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.round(eased * target);
+                        counter.textContent = current.toLocaleString();
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // ===== Lightbox =====
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(card) {
+            const img = card.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target === lightbox || event.currentTarget !== lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ===== Form Submission =====
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('lead-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successDiv = document.getElementById('form-success');
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                phone: '+60' + formData.get('phone'),
+                sector: formData.get('sector'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Simulate submission
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Menghantar...</span>
+            `;
+
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successDiv.classList.remove('hidden');
+                console.log('Lead captured:', data);
+            }, 1500);
+        }
+
+        // ===== Smooth scroll for nav active state =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('text-brand-gold');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('text-brand-gold');
+                    link.classList.remove('text-gray-400');
+                }
+            });
+        });
+
+        // ===== Hero Parallax =====
+        window.addEventListener('scroll', () => {
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) {
+                const scrolled = window.pageYOffset;
+                heroImg.style.transform = `scale(1.05) translateY(${scrolled * 0.15}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
