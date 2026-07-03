@@ -188,7 +188,7 @@
         .btn-shimmer:hover::after { left: 100%; }
     </style>
 </head>
-<body class="bg-brand-dark text-white font-sans antialiased">
+<body class="bg-brand-dark text-white font-sans antialiased pb-16 md:pb-0">
 
     <!-- ========== STICKY NAVIGATION ========== -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass bg-brand-dark/80 border-b border-brand-border/50 transition-all duration-500">
@@ -207,10 +207,11 @@
 
                 <!-- Desktop Nav Links -->
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#features" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Ciri-Ciri</a>
-                    <a href="#value" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Tawaran</a>
+                    <a href="#features" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Spesifikasi</a>
+                    <a href="#incentives" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Insentif</a>
+                    <a href="#urgency" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Unit</a>
                     <a href="#calculator" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Kalkulator</a>
-                    <a href="#gallery" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Galeri</a>
+                    <a href="#location" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Lokasi</a>
                     <a href="#register" class="text-sm text-gray-400 hover:text-brand-gold transition-colors duration-300 tracking-wide">Daftar</a>
                 </div>
 
@@ -233,10 +234,11 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden border-t border-brand-border/50 py-4 space-y-3">
-                <a href="#features" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Ciri-Ciri</a>
-                <a href="#value" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Tawaran</a>
+                <a href="#features" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Spesifikasi</a>
+                <a href="#incentives" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Insentif</a>
+                <a href="#urgency" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Unit Tersedia</a>
                 <a href="#calculator" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Kalkulator</a>
-                <a href="#gallery" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Galeri</a>
+                <a href="#location" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Lokasi</a>
                 <a href="#register" class="block text-sm text-gray-400 hover:text-brand-gold py-2 transition-colors">Daftar</a>
                 <a href="tel:+60124610423" class="flex items-center gap-2 text-sm text-brand-gold py-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
@@ -257,53 +259,64 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
             <div class="max-w-3xl">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
-                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                    <span class="text-xs font-semibold text-brand-gold tracking-widest uppercase">Kini Dibuka Untuk Tempahan</span>
+                <!-- Urgency Badges Row -->
+                <div class="flex flex-wrap gap-3 mb-6 animate-fade-in">
+                    <div class="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/40 rounded-full px-4 py-1.5">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span class="text-xs font-bold text-red-400 tracking-wide uppercase">🔴 Hanya 6 Unit Sahaja Lagi!</span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                        <span class="text-xs font-semibold text-brand-gold tracking-widest uppercase">Rezab Melayu · Pegangan Bebas</span>
+                    </div>
                 </div>
 
                 <!-- Title -->
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold leading-[1.1] mb-6 animate-fade-up">
-                    <span class="text-white">Taman</span><br>
-                    <span class="text-brand-gold">Desa Idaman</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-[1.15] mb-5 animate-fade-up">
+                    Miliki Rumah Semi-D 1 Tingkat<br>
+                    <span class="text-brand-gold">Idaman Anda di Banting</span><br>
+                    <span class="text-2xl sm:text-4xl lg:text-5xl">Dari <span class="text-brand-gold">RM436k*</span></span>
                 </h1>
-                <p class="text-lg sm:text-xl text-gray-300 font-light mb-2 animate-fade-up" style="animation-delay: 0.2s">
-                    Olak Lempit, Banting — Selangor
-                </p>
-                <p class="text-base text-gray-500 mb-10 animate-fade-up" style="animation-delay: 0.3s">
-                    28 Unit Rumah Berkembar Setingkat &bull; Tanah Rizab Melayu Pegangan Bebas
+
+                <!-- Sub-headline -->
+                <p class="text-base sm:text-lg text-gray-300 mb-8 animate-fade-up leading-relaxed" style="animation-delay: 0.2s">
+                    Rebat &amp; Cash Back Sehingga <strong class="text-brand-gold">RM25,000</strong> · Tempahan Cuma <strong class="text-white">RM200</strong> · Pinjaman LPPSA Diurus A–Z
                 </p>
 
-                <!-- Quick Stats Row -->
-                <div class="flex flex-wrap gap-4 mb-10 animate-fade-up" style="animation-delay: 0.4s">
-                    <div class="value-badge rounded-xl px-5 py-3 text-center">
-                        <span class="block text-2xl font-bold text-brand-gold">RM200</span>
-                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Yuran Tempahan</span>
+                <!-- Stats Badges -->
+                <div class="flex flex-wrap gap-3 mb-8 animate-fade-up" style="animation-delay: 0.3s">
+                    <div class="value-badge rounded-xl px-4 py-3 text-center">
+                        <span class="block text-xl font-bold text-brand-gold">RM200</span>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider">Booking</span>
                     </div>
-                    <div class="value-badge rounded-xl px-5 py-3 text-center">
-                        <span class="block text-2xl font-bold text-brand-gold">RM25K</span>
-                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Wang Tunai Balik</span>
+                    <div class="value-badge rounded-xl px-4 py-3 text-center">
+                        <span class="block text-xl font-bold text-brand-gold">RM25,000</span>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider">Cash Back</span>
                     </div>
-                    <div class="value-badge rounded-xl px-5 py-3 text-center">
-                        <span class="block text-2xl font-bold text-brand-gold">100%</span>
-                        <span class="text-[11px] text-gray-400 uppercase tracking-wider">Pinjaman LPPSA</span>
+                    <div class="value-badge rounded-xl px-4 py-3 text-center">
+                        <span class="block text-xl font-bold text-brand-gold">100%</span>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider">LPPSA</span>
+                    </div>
+                    <div class="value-badge rounded-xl px-4 py-3 text-center">
+                        <span class="block text-xl font-bold text-green-400">6 Unit</span>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider">Tersedia</span>
                     </div>
                 </div>
 
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap gap-4 animate-fade-up" style="animation-delay: 0.5s">
-                    <a href="#register" class="bg-brand-gold hover:bg-brand-gold-light text-[#0D0D0D] font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 btn-shimmer animate-pulse-gold inline-flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                        Daftar Minat
+                <!-- CTA Button -->
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s">
+                    <a href="#register" class="bg-brand-gold hover:bg-brand-gold-light text-[#0D0D0D] font-black text-base sm:text-lg px-8 py-5 rounded-xl transition-all duration-300 btn-shimmer animate-pulse-gold inline-flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/20">
+                        ➡️ Semak Kelayakan &amp; Pilih Unit Sekarang
                     </a>
-                    <a href="#features" class="border border-white/20 hover:border-brand-gold/50 text-white hover:text-brand-gold font-medium text-base px-8 py-4 rounded-xl transition-all duration-300 inline-flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        Lihat Lanjut
+                    <a href="https://wa.me/60124610423?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman.%20Boleh%20semak%20kelayakan%3F" target="_blank" class="border-2 border-green-500 text-green-400 hover:bg-green-500/10 font-bold text-base px-6 py-5 rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp Sekarang
                     </a>
                 </div>
+
+                <p class="text-xs text-gray-600 mt-4 animate-fade-up" style="animation-delay: 0.5s">*Harga tertakluk kepada syarat & terma pemaju. Segala pertanyaan sila hubungi ejen bertauliah.</p>
             </div>
         </div>
 
@@ -450,6 +463,241 @@
                     <p class="text-white font-semibold mb-2">Pinjaman LPPSA A–Z</p>
                     <p class="text-sm text-gray-500">Pembiayaan LPPSA penuh diuruskan dari A hingga Z. Sifar deposit, sifar risau untuk penjawat awam.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== INCENTIVES & FINANCIAL WOW ========== -->
+    <section id="incentives" class="py-24 lg:py-32 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #C9A96E 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">Skim Insentif</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Simpan Lebih, Dapat <span class="text-brand-gold italic">RM25,000</span>
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Pakej insentif terlengkap — rebat SPA, yuran guaman percuma, duti setem percuma, dan cash back berlapis.</p>
+                <div class="w-16 h-px bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <!-- 3 Incentive Cards -->
+            <div class="grid md:grid-cols-3 gap-6 mb-14">
+                <!-- Card 1: SPA Rebate -->
+                <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/50 transition-all duration-500 reveal" style="transition-delay:0.1s">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold to-brand-gold-light"></div>
+                    <div class="text-4xl mb-5">🏷️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Rebat SPA <span class="text-brand-gold">10%</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Rebat 10% daripada harga SPA diberikan terus kepada pembeli. Ini bermakna anda membayar 90% harga sahaja semasa tandatangan SPA.</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> Jimat Terus Ribuan Ringgit
+                    </div>
+                </div>
+                <!-- Card 2: Legal Fees -->
+                <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/50 transition-all duration-500 reveal" style="transition-delay:0.2s">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold to-brand-gold-light"></div>
+                    <div class="text-4xl mb-5">⚖️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Percuma<br><span class="text-brand-gold">Yuran Guaman SPA</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Yuran peguam untuk Perjanjian Jual Beli (SPA) ditanggung sepenuhnya oleh pemaju. Anda tidak perlu keluarkan sebarang wang untuk urusan undang-undang.</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> Tiada Kos Tersembunyi
+                    </div>
+                </div>
+                <!-- Card 3: Stamp Duty -->
+                <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 relative overflow-hidden group hover:border-brand-gold/50 transition-all duration-500 reveal" style="transition-delay:0.3s">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold to-brand-gold-light"></div>
+                    <div class="text-4xl mb-5">📄</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Percuma<br><span class="text-brand-gold">Duti Setem MOT</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Duti setem untuk Memorandum of Transfer (MOT) / pindah milik ditanggung oleh pemaju. Penjimatan bernilai ribuan ringgit untuk anda.</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> Pindah Milik Bebas Duti
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cash Back Breakdown Table -->
+            <div class="bg-brand-surface border border-brand-gold/20 rounded-3xl overflow-hidden reveal">
+                <div class="bg-gradient-to-r from-brand-gold/10 to-transparent px-8 py-6 border-b border-brand-border">
+                    <h3 class="text-2xl font-serif font-bold text-white">💰 Pecahan Cash Back — Sehingga <span class="text-brand-gold">RM25,000</span></h3>
+                    <p class="text-gray-500 text-sm mt-1">Tuntut kesemua 3 lapisan cash back untuk nilai maksimum</p>
+                </div>
+                <div class="divide-y divide-brand-border">
+                    <div class="flex items-center justify-between px-8 py-5 hover:bg-brand-dark/50 transition-colors">
+                        <div>
+                            <p class="text-white font-semibold">Cash Back Utama</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Layak secara automatik untuk semua pembeli</p>
+                        </div>
+                        <span class="text-2xl font-black text-brand-gold">RM15,000</span>
+                    </div>
+                    <div class="flex items-center justify-between px-8 py-5 hover:bg-brand-dark/50 transition-colors">
+                        <div>
+                            <p class="text-white font-semibold">Cash Back Event</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Tandatangan SPA semasa acara pemasaran</p>
+                        </div>
+                        <span class="text-2xl font-black text-brand-gold">RM5,000</span>
+                    </div>
+                    <div class="flex items-center justify-between px-8 py-5 hover:bg-brand-dark/50 transition-colors">
+                        <div>
+                            <p class="text-white font-semibold">Cash Back Pinjaman Laju</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Kelulusan pinjaman dalam tempoh 1 bulan</p>
+                        </div>
+                        <span class="text-2xl font-black text-brand-gold">RM5,000</span>
+                    </div>
+                    <div class="flex items-center justify-between px-8 py-6 bg-brand-gold/5">
+                        <div>
+                            <p class="text-xl font-black text-white uppercase tracking-wide">🏆 Jumlah Cash Back</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Layak untuk semua 3 lapisan</p>
+                        </div>
+                        <span class="text-3xl font-black text-brand-gold">RM25,000</span>
+                    </div>
+                </div>
+
+                <!-- Loan Support Row -->
+                <div class="px-8 py-6 bg-brand-dark border-t border-brand-border">
+                    <p class="text-xs text-brand-gold font-semibold uppercase tracking-widest mb-4">🏦 Sokongan Pinjaman</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-3 bg-brand-surface border border-brand-border rounded-xl px-5 py-3">
+                            <span class="text-2xl">🏛️</span>
+                            <div>
+                                <p class="text-white font-bold text-sm">LPPSA</p>
+                                <p class="text-gray-500 text-xs">Penjawat Awam — 100%</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-surface border border-brand-border rounded-xl px-5 py-3">
+                            <span class="text-2xl">🏦</span>
+                            <div>
+                                <p class="text-white font-bold text-sm">Maybank</p>
+                                <p class="text-gray-500 text-xs">Sektor Swasta</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-surface border border-brand-border rounded-xl px-5 py-3">
+                            <span class="text-2xl">🏦</span>
+                            <div>
+                                <p class="text-white font-bold text-sm">RHB Bank</p>
+                                <p class="text-gray-500 text-xs">Sektor Swasta</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-surface border border-brand-border rounded-xl px-5 py-3">
+                            <span class="text-2xl">🏦</span>
+                            <div>
+                                <p class="text-white font-bold text-sm">Bank Islam</p>
+                                <p class="text-gray-500 text-xs">Pembiayaan Islami</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
+    <!-- ========== UNIT URGENCY TRACKER ========== -->
+    <section id="urgency" class="py-24 lg:py-32 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-12 reveal">
+                <span class="text-red-400 text-xs font-semibold tracking-[4px] uppercase">⚠️ Pengedar Unit Terkini</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Status Unit — <span class="text-red-400">Bertindak Sekarang!</span>
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">28 unit eksklusif sahaja. Kebanyakan telah ditempah. Hanya <strong class="text-green-400">6 unit</strong> yang masih tersedia.</p>
+                <div class="w-16 h-px bg-red-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Progress Summary Cards -->
+            <div class="grid grid-cols-3 gap-4 mb-12 reveal">
+                <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-5 text-center">
+                    <div class="text-3xl sm:text-4xl font-black text-red-400 mb-1">13</div>
+                    <div class="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">🔴 DIJUAL</div>
+                    <div class="w-full bg-brand-border rounded-full h-1.5 mt-3">
+                        <div class="bg-red-500 h-1.5 rounded-full" style="width:46%"></div>
+                    </div>
+                    <div class="text-xs text-gray-600 mt-1">46%</div>
+                </div>
+                <div class="bg-orange-500/10 border border-orange-500/30 rounded-2xl p-5 text-center">
+                    <div class="text-3xl sm:text-4xl font-black text-orange-400 mb-1">9</div>
+                    <div class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-1">🟠 DITEMPAH</div>
+                    <div class="w-full bg-brand-border rounded-full h-1.5 mt-3">
+                        <div class="bg-orange-500 h-1.5 rounded-full" style="width:32%"></div>
+                    </div>
+                    <div class="text-xs text-gray-600 mt-1">32%</div>
+                </div>
+                <div class="bg-green-500/10 border border-green-500/30 rounded-2xl p-5 text-center">
+                    <div class="text-3xl sm:text-4xl font-black text-green-400 mb-1">6</div>
+                    <div class="text-xs font-bold text-green-400 uppercase tracking-wider mb-1">🟢 TERSEDIA</div>
+                    <div class="w-full bg-brand-border rounded-full h-1.5 mt-3">
+                        <div class="bg-green-500 h-1.5 rounded-full" style="width:22%"></div>
+                    </div>
+                    <div class="text-xs text-gray-600 mt-1">22%</div>
+                </div>
+            </div>
+
+            <!-- Visual 28-unit Grid -->
+            <div class="bg-brand-dark border border-brand-border rounded-3xl p-6 sm:p-8 reveal">
+                <p class="text-center text-xs text-gray-500 uppercase tracking-widest mb-6">Peta Unit (Bukan Peta Sebenar — Representasi Sahaja)</p>
+                <div class="grid grid-cols-7 sm:grid-cols-14 gap-2 sm:gap-3 mb-6" id="unit-grid">
+                    <!-- 13 sold (red) -->
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 01 — Dijual">01</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 02 — Dijual">02</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 03 — Dijual">03</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 04 — Dijual">04</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 05 — Dijual">05</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 06 — Dijual">06</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 07 — Dijual">07</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 08 — Dijual">08</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 09 — Dijual">09</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 10 — Dijual">10</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 11 — Dijual">11</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 12 — Dijual">12</div>
+                    <div class="aspect-square rounded-lg bg-red-500/80 border border-red-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 13 — Dijual">13</div>
+                    <!-- 9 booked (orange) -->
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 14 — Ditempah">14</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 15 — Ditempah">15</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 16 — Ditempah">16</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 17 — Ditempah">17</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 18 — Ditempah">18</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 19 — Ditempah">19</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 20 — Ditempah">20</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 21 — Ditempah">21</div>
+                    <div class="aspect-square rounded-lg bg-orange-400/80 border border-orange-400/50 flex items-center justify-center text-[10px] font-bold text-white" title="Unit 22 — Ditempah">22</div>
+                    <!-- 6 available (green, pulsing) -->
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 23 — TERSEDIA">23</div>
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 24 — TERSEDIA">24</div>
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 25 — TERSEDIA">25</div>
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 26 — TERSEDIA">26</div>
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 27 — TERSEDIA">27</div>
+                    <div class="aspect-square rounded-lg bg-green-500 border-2 border-green-400 flex items-center justify-center text-[10px] font-bold text-white animate-pulse" title="Unit 28 — TERSEDIA">28</div>
+                </div>
+
+                <!-- Legend -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs">
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded bg-red-500"></div>
+                        <span class="text-gray-400">Dijual (13 unit)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded bg-orange-400"></div>
+                        <span class="text-gray-400">Ditempah (9 unit)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded bg-green-500"></div>
+                        <span class="text-gray-400 font-bold">Tersedia (6 unit) ← ANDA DI SINI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOMO CTA -->
+            <div class="text-center mt-10 reveal">
+                <a href="#register" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white font-black text-base px-10 py-5 rounded-xl transition-all duration-300 shadow-lg shadow-red-900/40 btn-shimmer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    Tempah Unit Sekarang — Sebelum Terlambat!
+                </a>
+                <p class="text-xs text-gray-600 mt-3">Tempahan RM200 sahaja. Data dikemaskini setiap Jumaat.</p>
             </div>
         </div>
     </section>
@@ -687,6 +935,149 @@
     <!-- ========== DIVIDER ========== -->
     <div class="w-full h-px shimmer-line"></div>
 
+    <!-- ========== LOCATION & ACCESSIBILITY MATRIX ========== -->
+    <section id="location" class="py-24 lg:py-32 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold text-xs font-semibold tracking-[4px] uppercase">📍 Lokasi Strategik</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-4 mb-4">
+                    Banting — <span class="text-brand-gold italic">Pusat Segala-galanya</span>
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Olak Lempit, Banting — dikepung oleh kemudahan, sekolah, dan lebuh raya utama Selangor Selatan.</p>
+                <div class="w-16 h-px bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Left: Amenities -->
+                <div class="space-y-4 reveal-left">
+                    <h3 class="text-lg font-bold text-brand-gold uppercase tracking-wider mb-6">🏫 Kemudahan Sekitar</h3>
+                    <div class="flex items-start gap-4 bg-brand-surface border border-brand-border rounded-2xl p-5 hover:border-brand-gold/30 transition-colors">
+                        <span class="text-2xl">🏫</span>
+                        <div>
+                            <p class="text-white font-semibold">Sekolah & Tadika</p>
+                            <p class="text-gray-500 text-sm">SK Olak Lempit, SMK Banting, SK Jenjarum — dalam radius 5km</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-brand-surface border border-brand-border rounded-2xl p-5 hover:border-brand-gold/30 transition-colors">
+                        <span class="text-2xl">🕌</span>
+                        <div>
+                            <p class="text-white font-semibold">Surau & Masjid</p>
+                            <p class="text-gray-500 text-sm">Surau dalam kawasan perumahan + Masjid Banting dalam 10 minit</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-brand-surface border border-brand-border rounded-2xl p-5 hover:border-brand-gold/30 transition-colors">
+                        <span class="text-2xl">🛒</span>
+                        <div>
+                            <p class="text-white font-semibold">Pasaraya & Kedai Runcit</p>
+                            <p class="text-gray-500 text-sm">Tesco Banting, Mydin, NSK Trade City — semua dalam 15 minit</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-brand-surface border border-brand-border rounded-2xl p-5 hover:border-brand-gold/30 transition-colors">
+                        <span class="text-2xl">🏥</span>
+                        <div>
+                            <p class="text-white font-semibold">Klinik & Hospital</p>
+                            <p class="text-gray-500 text-sm">Klinik Kesihatan Olak Lempit, Hospital Banting — perkhidmatan kesihatan lengkap</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-brand-surface border border-brand-border rounded-2xl p-5 hover:border-brand-gold/30 transition-colors">
+                        <span class="text-2xl">✈️</span>
+                        <div>
+                            <p class="text-white font-semibold">Lapangan Terbang KLIA</p>
+                            <p class="text-gray-500 text-sm">KLIA &amp; KLIA2 — hanya ±35 minit perjalanan</p>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Button -->
+                    <a href="https://www.google.com/maps/search/Olak+Lempit+Banting+Selangor" target="_blank" rel="noopener"
+                        class="flex items-center justify-center gap-3 w-full bg-brand-surface border-2 border-brand-gold/40 hover:border-brand-gold hover:bg-brand-gold/5 text-brand-gold font-bold py-4 rounded-2xl transition-all duration-300 mt-6">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Lihat di Google Maps
+                    </a>
+                </div>
+
+                <!-- Right: Highway Matrix -->
+                <div class="reveal-right">
+                    <h3 class="text-lg font-bold text-brand-gold uppercase tracking-wider mb-6">🛣️ Sambungan Lebuh Raya</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-blue-600 text-white text-xs font-black px-3 py-1 rounded-lg">WCE</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">West Coast Expressway</p>
+                                    <p class="text-gray-600 text-xs">Terus ke KL, Ipoh & Utara</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~5 min</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-green-700 text-white text-xs font-black px-3 py-1 rounded-lg">B-D</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">Dengkil–Banting Highway</p>
+                                    <p class="text-gray-600 text-xs">Sambung ke Sepang & Nilai</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~10 min</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-purple-700 text-white text-xs font-black px-3 py-1 rounded-lg">ELITE</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">Elite Highway</p>
+                                    <p class="text-gray-600 text-xs">Putrajaya, Cyberjaya, KL</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~20 min</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-red-700 text-white text-xs font-black px-3 py-1 rounded-lg">SKVE</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">Expressway SKVE</p>
+                                    <p class="text-gray-600 text-xs">Shah Alam & Klang</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~25 min</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-orange-600 text-white text-xs font-black px-3 py-1 rounded-lg">MEX</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">Maju Expressway (MEX)</p>
+                                    <p class="text-gray-600 text-xs">KL Selatan &amp; Cheras</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~30 min</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-brand-surface border border-brand-border rounded-xl px-6 py-4 hover:border-brand-gold/30 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-yellow-600 text-white text-xs font-black px-3 py-1 rounded-lg">PLUS</span>
+                                <div>
+                                    <p class="text-white font-semibold text-sm">PLUS North–South Highway</p>
+                                    <p class="text-gray-600 text-xs">Seremban, Johor, Utara</p>
+                                </div>
+                            </div>
+                            <span class="text-brand-gold text-xs font-bold">~35 min</span>
+                        </div>
+                    </div>
+
+                    <!-- KLIA Distance highlight -->
+                    <div class="mt-6 bg-gradient-to-br from-brand-gold/10 to-transparent border border-brand-gold/20 rounded-2xl p-6 text-center">
+                        <p class="text-4xl mb-2">✈️</p>
+                        <p class="text-brand-gold font-black text-2xl">±35 Minit</p>
+                        <p class="text-white font-semibold">ke KLIA / KLIA2</p>
+                        <p class="text-gray-500 text-xs mt-1">Sesuai untuk profesional &amp; ekspatriat yang kerap berulang-alik</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="w-full h-px shimmer-line"></div>
+
     <!-- ========== REGISTRATION FORM ========== -->
     <section id="register" class="py-24 lg:py-32 bg-brand-surface relative overflow-hidden">
         <!-- Decorative elements -->
@@ -820,9 +1211,10 @@
                 <!-- Links -->
                 <div class="flex items-center gap-6 text-sm text-gray-500">
                     <a href="#hero" class="hover:text-brand-gold transition-colors">Utama</a>
-                    <a href="#features" class="hover:text-brand-gold transition-colors">Ciri-Ciri</a>
+                    <a href="#features" class="hover:text-brand-gold transition-colors">Spesifikasi</a>
+                    <a href="#incentives" class="hover:text-brand-gold transition-colors">Insentif</a>
                     <a href="#calculator" class="hover:text-brand-gold transition-colors">Kalkulator</a>
-                    <a href="#gallery" class="hover:text-brand-gold transition-colors">Galeri</a>
+                    <a href="#location" class="hover:text-brand-gold transition-colors">Lokasi</a>
                     <a href="#register" class="hover:text-brand-gold transition-colors">Daftar</a>
                 </div>
 
@@ -841,13 +1233,23 @@
         </div>
     </footer>
 
-    <!-- ========== FLOATING WhatsApp BUTTON ========== -->
-    <a href="https://wa.me/60124610423?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman%20%40%20Olak%20Lempit%2C%20Banting." target="_blank" rel="noopener"
-        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110 group"
+    <!-- ========== STICKY MOBILE WHATSAPP BAR ========== -->
+    <!-- Desktop: floating circle button (bottom-right) -->
+    <a href="https://wa.me/60124610423?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman%20%40%20Olak%20Lempit%2C%20Banting.%20Boleh%20semak%20kelayakan%20saya%3F" target="_blank" rel="noopener"
+        class="hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110"
         aria-label="WhatsApp">
         <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-brand-dark animate-pulse"></span>
     </a>
+    <!-- Mobile: full-width sticky bottom anchor bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe">
+        <a href="https://wa.me/60124610423?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman%20%40%20Olak%20Lempit%2C%20Banting.%20Boleh%20semak%20kelayakan%20saya%3F" target="_blank" rel="noopener"
+            class="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-black text-sm py-4 transition-all duration-200 shadow-xl shadow-green-900/50">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            💬 Semak Kelayakan — WhatsApp Kami (Booking RM200)
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse flex-shrink-0"></span>
+        </a>
+    </div>
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
