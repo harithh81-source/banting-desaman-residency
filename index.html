@@ -927,6 +927,9 @@
             const submitBtn = document.getElementById('submit-btn');
             const successDiv = document.getElementById('form-success');
 
+            // Ganti dengan URL Google Script Web App anda selepas mengikuti langkah di LEADS_SETUP.md
+            const scriptURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL';
+
             // Get form data
             const formData = new FormData(form);
             const data = {
@@ -936,7 +939,7 @@
                 timestamp: new Date().toISOString()
             };
 
-            // Simulate submission
+            // Menunjukkan animasi menghantar
             submitBtn.disabled = true;
             submitBtn.innerHTML = `
                 <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
@@ -946,11 +949,30 @@
                 <span>Menghantar...</span>
             `;
 
-            setTimeout(() => {
-                form.classList.add('hidden');
-                successDiv.classList.remove('hidden');
-                console.log('Lead captured:', data);
-            }, 1500);
+            if (scriptURL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+                // Mod Simulasi (Jika URL belum dikonfigurasi)
+                setTimeout(() => {
+                    form.classList.add('hidden');
+                    successDiv.classList.remove('hidden');
+                    console.log('Lead captured (Simulation):', data);
+                }, 1500);
+            } else {
+                // Mod Sebenar (Menghantar ke Google Sheet & Emel)
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: formData 
+                })
+                .then(response => {
+                    form.classList.add('hidden');
+                    successDiv.classList.remove('hidden');
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    // Masih menunjukkan sukses sebagai sandaran keselamatan pengguna
+                    form.classList.add('hidden');
+                    successDiv.classList.remove('hidden');
+                });
+            }
         }
 
         // ===== Financial Calculator Logic =====
