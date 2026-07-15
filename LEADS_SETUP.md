@@ -12,6 +12,11 @@ Gunakan kaedah percuma ini untuk menyimpan data pendaftaran terus ke Google Shee
    * **B1**: `Nama Penuh`
    * **C1**: `Nombor Telefon`
    * **D1**: `Sektor Pekerjaan`
+   * **E1**: `UTM Source` (Asal usul trafik - cth: fb, ig)
+   * **F1**: `UTM Medium` (Medium iklan - cth: fbads)
+   * **G1**: `UTM Campaign` (Nama kempen iklan Meta)
+   * **H1**: `UTM Content` (Nama iklan/ad)
+   * **I1**: `UTM Term` (Nama adset/sasaran)
 
 ---
 
@@ -31,10 +36,25 @@ function doPost(e) {
     const name = e.parameter.name;
     const phone = "+60" + e.parameter.phone;
     const sector = e.parameter.sector;
+    const utm_source = e.parameter.utm_source || "";
+    const utm_medium = e.parameter.utm_medium || "";
+    const utm_campaign = e.parameter.utm_campaign || "";
+    const utm_content = e.parameter.utm_content || "";
+    const utm_term = e.parameter.utm_term || "";
     const timestamp = new Date();
     
     // Masukkan baris baharu ke Google Sheet
-    sheet.appendRow([timestamp, name, phone, sector]);
+    sheet.appendRow([
+      timestamp, 
+      name, 
+      phone, 
+      sector, 
+      utm_source, 
+      utm_medium, 
+      utm_campaign, 
+      utm_content, 
+      utm_term
+    ]);
     
     // Hantar notifikasi emel segera kepada anda
     MailApp.sendEmail({

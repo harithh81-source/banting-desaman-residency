@@ -201,11 +201,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4405119773087426');
+    fbq('init', '1066316795759699');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=4405119773087426&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1066316795759699&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
@@ -1301,6 +1301,13 @@
                                 </div>
                             </div>
 
+                            <!-- UTM tracking hidden inputs -->
+                            <input type="hidden" name="utm_source" id="form-utm-source">
+                            <input type="hidden" name="utm_medium" id="form-utm-medium">
+                            <input type="hidden" name="utm_campaign" id="form-utm-campaign">
+                            <input type="hidden" name="utm_content" id="form-utm-content">
+                            <input type="hidden" name="utm_term" id="form-utm-term">
+
                             <!-- Submit -->
                              <button type="submit" id="submit-btn"
                                 class="w-full bg-brand-gold hover:bg-brand-gold-light text-[#0D0D0D] font-bold text-base py-4 rounded-xl transition-all duration-300 btn-shimmer flex items-center justify-center gap-2 mt-2">
@@ -1479,6 +1486,22 @@
             }
         });
 
+        // ===== UTM Parameter Capture =====
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+            
+            utmParams.forEach(param => {
+                const val = urlParams.get(param);
+                if (val) {
+                    const input = document.getElementById(`form-${param.replace(/_/g, '-')}`);
+                    if (input) {
+                        input.value = val;
+                    }
+                }
+            });
+        });
+
         // ===== Form Submission =====
         function handleFormSubmit(event) {
             event.preventDefault();
@@ -1495,6 +1518,11 @@
                 name: formData.get('name'),
                 phone: '+60' + formData.get('phone'),
                 sector: formData.get('sector'),
+                utm_source: formData.get('utm_source') || '',
+                utm_medium: formData.get('utm_medium') || '',
+                utm_campaign: formData.get('utm_campaign') || '',
+                utm_content: formData.get('utm_content') || '',
+                utm_term: formData.get('utm_term') || '',
                 timestamp: new Date().toISOString()
             };
 
@@ -1514,6 +1542,9 @@
                     form.classList.add('hidden');
                     successDiv.classList.remove('hidden');
                     console.log('Lead captured (Simulation):', data);
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
                 }, 1500);
             } else {
                 // Mod Sebenar (Menghantar ke Google Sheet & Emel)
@@ -1524,12 +1555,18 @@
                 .then(response => {
                     form.classList.add('hidden');
                     successDiv.classList.remove('hidden');
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
                     // Masih menunjukkan sukses sebagai sandaran keselamatan pengguna
                     form.classList.add('hidden');
                     successDiv.classList.remove('hidden');
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
                 });
             }
         }
