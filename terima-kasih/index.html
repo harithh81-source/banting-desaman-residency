@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghubungkan ke WhatsApp - Desa Idaman</title>
+    
+    <!-- Prevent indexing of redirect page -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#C9A96E',
+                            'gold-light': '#E2CB9A',
+                            'gold-dark': '#A68B52',
+                            charcoal: '#1A1A1A',
+                            'dark': '#0D0D0D',
+                            'surface': '#141414',
+                            'surface-light': '#1E1E1E',
+                            'border': '#2A2A2A',
+                        }
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseGold: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(201, 169, 110, 0.4)' },
+                            '50%': { boxShadow: '0 0 0 12px rgba(201, 169, 110, 0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .nav-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-shimmer:hover::after { left: 100%; }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1066316795759699');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead'); // Fire the Lead event to count this redirect as a conversion
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1066316795759699&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased min-h-screen flex flex-col justify-between relative overflow-hidden">
+
+    <!-- Top Shimmer Accent Line -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold"></div>
+
+    <!-- Glowing Background Orb -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="py-6 px-6 border-b border-brand-border/30 nav-glass bg-brand-dark/40 z-10">
+        <div class="max-w-7xl mx-auto flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-gold to-brand-gold-dark flex items-center justify-center">
+                    <svg class="w-4 h-4 text-brand-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-brand-gold tracking-widest uppercase block">Desa Idaman</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT (BRIDGE) ========== -->
+    <main class="flex-grow flex items-center justify-center px-4 py-16 z-10">
+        <div class="w-full max-w-md bg-brand-surface/75 border border-brand-border/60 rounded-3xl p-8 md:p-10 shadow-2xl backdrop-blur-xl text-center animate-fade-up">
+            
+            <!-- Animated Icon Container -->
+            <div id="icon-container" class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 transition-all duration-500">
+                <!-- Fallback Loading spinner or checkmark is dynamically inserted -->
+                <svg id="loading-spinner" class="animate-spin w-10 h-10 text-brand-gold" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+                    <path class="opacity-85" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+
+            <!-- Dynamic Heading -->
+            <h1 id="status-title" class="text-2xl font-serif font-bold text-white mb-3">
+                Menghubungkan ke WhatsApp...
+            </h1>
+            
+            <!-- Dynamic Message -->
+            <p id="status-message" class="text-sm text-gray-400 mb-8 leading-relaxed">
+                Sila tunggu sebentar. Kami sedang menghubungkan anda ke WhatsApp untuk perbincangan lanjut bersama ejen jualan kami.
+            </p>
+
+            <!-- Custom Progress Bar -->
+            <div class="w-full bg-[#1A1A1A] h-1.5 rounded-full overflow-hidden mb-8 border border-brand-border/30">
+                <div id="progress-bar" class="bg-gradient-to-r from-brand-gold to-brand-gold-light h-full w-0 transition-all duration-100 ease-out"></div>
+            </div>
+
+            <!-- Manual CTA Button (WhatsApp Styled) -->
+            <a id="redirect-btn" href="#"
+                class="w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-black text-sm py-4 rounded-xl transition-all duration-300 btn-shimmer flex items-center justify-center gap-3 shadow-lg shadow-green-500/20">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>Hubungi via WhatsApp</span>
+            </a>
+
+            <p class="text-[11px] text-gray-500 mt-4 leading-relaxed">
+                Jika anda tidak dihalakan secara automatik selepas beberapa saat,<br>sila klik butang di atas.
+            </p>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-6 border-t border-brand-border/30 bg-brand-dark/20 text-center z-10">
+        <p class="text-xs text-gray-600">
+            © 2026 Taman Desa Idaman. Hak cipta terpelihara.
+        </p>
+    </footer>
+
+    <!-- ========== SCRIPT ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+            let target = urlParams.get('target');
+
+            // Default fallback WhatsApp Link
+            const defaultTarget = "https://wa.me/60124610423?text=Hi%2C%20saya%20berminat%20dengan%20Taman%20Desa%20Idaman.%20Boleh%20semak%20kelayakan%3F";
+
+            // Safety URL Verification
+            if (!target) {
+                target = defaultTarget;
+            } else {
+                target = decodeURIComponent(target);
+                // Basic security verification to ensure we only redirect to WhatsApp URLs
+                if (!target.startsWith('https://wa.me/') && !target.startsWith('https://api.whatsapp.com/')) {
+                    console.warn("Invalid redirect target detected. Resetting to default WhatsApp link.");
+                    target = defaultTarget;
+                }
+            }
+
+            // Set manual button href
+            const redirectBtn = document.getElementById('redirect-btn');
+            redirectBtn.href = target;
+
+            // DOM elements
+            const iconContainer = document.getElementById('icon-container');
+            const statusTitle = document.getElementById('status-title');
+            const statusMessage = document.getElementById('status-message');
+            const progressBar = document.getElementById('progress-bar');
+
+            // Customize view depending on redirect type
+            if (type === 'register') {
+                // Style container with green success gradient
+                iconContainer.className = "w-20 h-20 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center mx-auto mb-8 shadow-lg shadow-green-500/5";
+                // Inject success checkmark icon
+                iconContainer.innerHTML = `
+                    <svg class="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                `;
+                // Change texts
+                statusTitle.innerText = "Pendaftaran Berjaya!";
+                statusMessage.innerText = "Pendaftaran minat anda telah diterima dengan selamat. Kami sedang menghubungkan anda ke WhatsApp untuk semakan kelayakan segera.";
+            } else {
+                // Style container with gold brand color
+                iconContainer.className = "w-20 h-20 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center mx-auto mb-8 shadow-lg shadow-brand-gold/5";
+                // Inject animated loading indicator + WhatsApp bubble icon
+                iconContainer.innerHTML = `
+                    <svg class="w-10 h-10 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle class="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"></circle>
+                        <path class="opacity-90" fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.03 1.09 4.38L2 22l5.8-.9C9.04 21.72 10.5 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1.61 14.88c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.18.28-.71.9-.87 1.09-.16.19-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48h-.53c-.18 0-.48.07-.73.35-.25.27-.96.94-.96 2.3s.99 2.66 1.13 2.85c.14.19 1.95 2.97 4.72 4.16.66.28 1.17.45 1.57.58.66.21 1.26.18 1.74.11.53-.08 1.63-.67 1.86-1.3.23-.64.23-1.2.16-1.31-.07-.11-.25-.18-.53-.32z"></path>
+                    </svg>
+                `;
+                statusTitle.innerText = "Menghubungkan ke WhatsApp...";
+                statusMessage.innerText = "Sila tunggu sebentar. Kami sedang membuka aplikasi WhatsApp untuk anda berhubung secara terus dengan ejen jualan kami.";
+            }
+
+            // Animate Progress Bar (0% to 100% over 2 seconds)
+            const duration = 2000;
+            const intervalTime = 20; // 20ms steps for 50fps smooth rendering
+            let elapsedTime = 0;
+
+            const progressInterval = setInterval(() => {
+                elapsedTime += intervalTime;
+                const progressPercentage = Math.min((elapsedTime / duration) * 100, 100);
+                progressBar.style.width = `${progressPercentage}%`;
+
+                if (elapsedTime >= duration) {
+                    clearInterval(progressInterval);
+                    // Perform redirect
+                    window.location.href = target;
+                }
+            }, intervalTime);
+        });
+    </script>
+</body>
+</html>

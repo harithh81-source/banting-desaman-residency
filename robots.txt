@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /terima-kasih/
+Disallow: /terima-kasih
 
 Sitemap: https://banting-desa-idaman-residency.vercel.app/sitemap.xml
